@@ -4,6 +4,7 @@ import './index.css'
 import LandingPage from "./pages/home/LandingPage";
 import ReportPage from "./pages/report/ReportPage";
 import StandardsPage from "./pages/standards/StandardsPage";
+import ReportPage2 from "./pages/report_agent2/ReportPage2";
 
 function App() {
 
@@ -17,6 +18,9 @@ function App() {
           {/* Route for the report page, with dynamic reportId */}
           <Route exact path={"/report/:reportId"} element={<ReportPage />} />
           <Route exact path={"/report"} element={<ReportPage />} />
+
+          <Route exact path={"/report2/:report2Id"} element={<ReportPage />} />
+          <Route exact path={"/report2"} element={<ReportPage2 />} />
 
           {/* Route for standards */}
           <Route exact path={"/stand"} element={<StandardsPage />} />
