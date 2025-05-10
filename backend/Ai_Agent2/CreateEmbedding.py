@@ -1,12 +1,32 @@
-import sys
+# Ai_Agent2/CreateEmbedding.py
 import os
+import sys
+from agent2 import create_embedding_db
 
-# Add project root to Python path
-sys.path.append(
-    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-)
+# Ensure file paths are built relative to this script's directory
+dir_path = os.path.dirname(os.path.abspath(__file__))
 
-from Ai_Agent2.agent2 import create_embedding_db
+# PDF files located in the same directory as this script
+pdf_filenames = ["FAS4.pdf", "FAS7.pdf", "FAS10.pdf", "FAS28.pdf", "FAS32.pdf"]
+# Build absolute paths
+pdf_paths = [os.path.join(dir_path, fname) for fname in pdf_filenames]
 
-pdf_paths = ["FAS4.pdf", "FAS7.pdf", "FAS10.pdf", "FAS28.pdf", "FAS32.pdf"]
-vectore_store = create_embedding_db(pdf_paths)
+# Verify each file exists before processing
+for path in pdf_paths:
+    if not os.path.isfile(path):
+        print(
+            f"Error loading {os.path.basename(path)}: File path {path} is not a valid file or url"
+        )
+        sys.exit(1)
+    else:
+        print(
+            f"Loading {os.path.basename(path)} as {os.path.splitext(os.path.basename(path))[0]}..."
+        )
+
+# Attempt to create the embedding database
+try:
+    vector_store = create_embedding_db(pdf_paths)
+    print("Embeddings created successfully.")
+except Exception as e:
+    print(f"Error during embedding creation: {e}")
+    sys.exit(1)

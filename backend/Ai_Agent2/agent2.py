@@ -12,7 +12,8 @@ import json
 from typing import List, Dict, Any
 
 # Load environment variables
-load_dotenv()
+ #load_dotenv()
+OPENAI_API_KEY = "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"
 
 
 # Function to load and process PDF files

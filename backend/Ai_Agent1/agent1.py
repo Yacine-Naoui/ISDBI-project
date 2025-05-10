@@ -2,13 +2,15 @@ from langchain_openai import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain.agents import AgentExecutor, create_openai_functions_agent
 from langchain_core.tools import tool
+from langchain.memory import ConversationBufferMemory
 import operator
 import os
 from dotenv import load_dotenv
 from typing import List, Dict, Any, TypedDict, Optional, Union
 
 # Load environment variables (.env file with your OpenAI API key)
-load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), ".env"))
+# load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), ".env"))
+OPENAI_API_KEY = "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"
 
 
 # Create a simple calculator tool
@@ -304,9 +306,11 @@ prompt = ChatPromptTemplate.from_messages(
     ]
 )
 
+
 # Create agent with more detailed system prompt
+memory = ConversationBufferMemory(return_messages=True)
 agent = create_openai_functions_agent(llm, tools, prompt)
-agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
+agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True, memory=memory)
 
 
 # Define a function to process transactions
