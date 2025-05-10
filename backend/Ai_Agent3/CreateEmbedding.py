@@ -7,7 +7,7 @@ from agent3 import create_embedding_db
 dir_path = os.path.dirname(os.path.abspath(__file__))
 
 # PDF files located in the same directory as this script
-pdf_filenames = ["FAS 4", "FAS 10", "FAS 32"]
+pdf_filenames = ["FAS4.pdf", "FAS10.pdf", "FAS32.pdf"]
 # Build absolute paths
 pdf_paths = [os.path.join(dir_path, fname) for fname in pdf_filenames]
 
