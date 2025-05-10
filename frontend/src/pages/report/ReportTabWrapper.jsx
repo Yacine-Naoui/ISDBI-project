@@ -39,7 +39,7 @@ const ReportTabsWrapper = ({ report }) => {
       </div>
 
       {/* Scrollable Content Area */}
-<div className="overflow-y-auto p-4 flex flex-col gap-5 custom-scrollbar">
+      <div className="overflow-y-auto p-4 flex flex-col gap-5 custom-scrollbar">
         {activeTab === "results" && (
           <>
             <BestDealChart />
@@ -51,11 +51,15 @@ const ReportTabsWrapper = ({ report }) => {
         )}
 
         {activeTab === "standards" && (
-          <div className="text-sm text-gray-500">Standards content coming soon...</div>
+          <div className="text-sm text-gray-500">
+            Standards content coming soon...
+          </div>
         )}
 
         {activeTab === "history" && (
-          <div className="text-sm text-gray-500">History content coming soon...</div>
+          <div className="text-sm text-gray-500">
+            History content coming soon...
+          </div>
         )}
       </div>
     </div>

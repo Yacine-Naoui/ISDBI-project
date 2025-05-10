@@ -5,6 +5,7 @@ import UseCase from "../../components/home/UseCase";
 
 
 import ReportTabsWrapper from "./ReportTabWrapper";
+import ChatBot from "../../components/home/ChatBot";
 
 const ReportPage = () => {
 
@@ -14,8 +15,8 @@ const ReportPage = () => {
       {/* Main Content Area */}
       <main className="flex justify-between">
         <div className="flex flex-col gap-5 basis-[43%]">
-          <Welcome />
-          <UseCase />
+          {/* <Welcome /> */}
+          <ChatBot />
         </div>
         <div className="flex flex-col basis-[55%] max-h-[calc(100vh-4rem)] overflow-hidden">
           <ReportTabsWrapper />
