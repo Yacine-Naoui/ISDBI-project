@@ -1,4 +1,11 @@
-import { X, MessageSquare, BookOpen } from "lucide-react";
+import {
+  X,
+  MessageSquare,
+  BookOpen,
+  FileText,
+  Search,
+  Sparkles,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
@@ -41,20 +48,45 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             Navigation
           </h3>
           <nav className="space-y-2">
-            <button className="w-full flex items-center gap-3 text-gray-700 hover:bg-blue-50 px-3 py-3 rounded-md transition cursor-pointer">
+            <Link
+              to={"/report"}
+              className="w-full flex items-center gap-3 text-gray-700 hover:bg-blue-50 px-3 py-3 rounded-md transition"
+            >
               <MessageSquare size={18} />
-              <Link to={"/prompt"}>
-                {" "}
-                <span className="text-sm font-medium">Chat Interface</span>
-              </Link>
-            </button>
-            <button className="w-full flex items-center gap-3 text-gray-700 hover:bg-blue-50 px-3 py-3 rounded-md transition cursor-pointer">
+              <span className="text-sm font-medium">Chat Interface</span>
+            </Link>
+
+            <Link
+              to={"/report3"}
+              className="w-full flex items-center gap-3 text-gray-700 hover:bg-blue-50 px-3 py-3 rounded-md transition"
+            >
+              <FileText size={18} />
+              <span className="text-sm font-medium">Entries Journalizer</span>
+            </Link>
+
+            <Link
+              to={"/report2"} // You can change this route later
+              className="w-full flex items-center gap-3 text-gray-700 hover:bg-blue-50 px-3 py-3 rounded-md transition"
+            >
+              <Search size={18} />
+              <span className="text-sm font-medium">FAS Identifier</span>
+            </Link>
+
+            <Link
+              to={"/report4"} // You can change this route later
+              className="w-full flex items-center gap-3 text-gray-700 hover:bg-blue-50 px-3 py-3 rounded-md transition"
+            >
+              <Sparkles size={18} />
+              <span className="text-sm font-medium">FAS Enhancer</span>
+            </Link>
+
+            <Link
+              to={"/stand"}
+              className="w-full flex items-center gap-3 text-gray-700 hover:bg-blue-50 px-3 py-3 rounded-md transition"
+            >
               <BookOpen size={18} />
-              <Link to={"/stand"}>
-                {" "}
-                <span className="text-sm font-medium">FAS Standards</span>
-              </Link>
-            </button>
+              <span className="text-sm font-medium">FAS Standards</span>
+            </Link>
           </nav>
         </div>
 
