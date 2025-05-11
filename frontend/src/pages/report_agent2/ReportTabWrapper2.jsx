@@ -36,10 +36,14 @@ const ReportTabsWrapper2 = ({ report }) => {
       </div>
 
       {/* Scrollable Content Area */}
-      <div className="overflow-y-auto p-4 flex flex-col gap-5 custom-scrollbar">
+      <div className="overflow-y-auto p-4 flex flex-col custom-scrollbar">
         {activeTab === "results" && (
           <>
-            <ApplicableStandard />
+            <ApplicableStandard prc="98%" />
+            <ApplicableStandard prc="86%" />
+            <ApplicableStandard prc="52%" />
+
+
           </>
         )}
 
