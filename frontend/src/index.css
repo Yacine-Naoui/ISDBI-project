@@ -45,3 +45,34 @@
   border: 2px solid transparent;
   background-clip: content-box;
 }
+
+/* Hero arc animations */
+@keyframes arcLightSweep {
+  0% {
+    background-position: 50% 120%;
+  }
+  50% {
+    background-position: 50% 40%;
+  }
+  100% {
+    background-position: 50% 120%;
+  }
+}
+
+/* Slide the big arc down slightly on load */
+.arc-slide {
+  transform: translate(-50%, -1200px);
+  opacity: 0;
+  animation: arcSlideDown 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes arcSlideDown {
+  0% {
+    transform: translate(-50%, -1200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -980px);
+    opacity: 1;
+  }
+}

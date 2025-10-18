@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Layout from "../../components/layout/Layout";
+import Hero from "../../components/Hero";
 import Welcome from "../../components/home/Welcome";
 import ChatBot from "../../components/home/ChatBot";
 
@@ -25,6 +26,7 @@ const LandingPage = () => {
   return (
     <Layout>
       <main className="font-sogeo flex flex-col gap-5 transition-all duration-700">
+        <Hero />
         {showWelcome && (
           <div
             className={`transition-all duration-700 ${
